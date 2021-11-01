@@ -10,7 +10,7 @@ int SumOfEvens()//bai 1 giong bài 2(odd khác 1 tí)
             printf("Input again, n = ");
             scanf("%d", &n);
         }
-
+    
     for (int i = 2; i < n; i = i + 2)
         {  
             sum += i; 
