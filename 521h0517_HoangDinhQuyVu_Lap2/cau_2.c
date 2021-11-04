@@ -1,16 +1,7 @@
 #include <stdio.h>
-int SumOfOdds()
+int SumOfOdds(int n)
 {
-    int n;
     int sum = 0;
-    printf("Input n = ");
-    scanf("%d", &n);
-    while (n < 5)
-        {
-            printf("Input again, n = ");
-            scanf("%d", &n);
-        }
-
     for (int i = 3; i < n; i = i + 2)
         {  
             sum += i; 
@@ -20,7 +11,17 @@ int SumOfOdds()
 
 }
 int main()
-{
-    int result = SumOfOdds();
+{   
+    int n;
+    
+    printf("Input n = ");
+    scanf("%d", &n);
+    while (n <= 0 )
+        {
+            printf("Input again, n = ");
+            scanf("%d", &n);
+        }
+
+    int result = SumOfOdds(n);
     printf("Sum of odds = %d\n", result);
 }
