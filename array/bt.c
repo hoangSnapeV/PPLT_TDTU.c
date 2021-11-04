@@ -42,5 +42,6 @@ int main()
 
     int result = sumEven(a, n);
     printf("\nsum of evens = %d\n", result);
+    
     return 0;
 }
