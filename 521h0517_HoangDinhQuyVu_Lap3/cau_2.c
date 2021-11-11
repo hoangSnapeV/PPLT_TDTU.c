@@ -1,9 +1,8 @@
 #include <stdio.h>
-int SumOfEvens(int n)//bai 1 giong bài 2(odd khác 1 tí)
+int SumOfOdds(int n)
 {
     int sum = 0;
-    
-    for (int i = 2; i < n; i = i + 2)
+    for (int i = 3; i < n; i = i + 2)
         {  
             sum += i; 
         }
@@ -14,14 +13,15 @@ int SumOfEvens(int n)//bai 1 giong bài 2(odd khác 1 tí)
 int main()
 {   
     int n;
+    
     printf("Input n = ");
     scanf("%d", &n);
-    while (n <= 0)
+    while (n <= 0 )
         {
             printf("Input again, n = ");
             scanf("%d", &n);
         }
-        
-    int result = SumOfEvens(n);
-    printf("Sum of evens = %d\n", result);
+
+    int result = SumOfOdds(n);
+    printf("Sum of odds = %d\n", result);
 }

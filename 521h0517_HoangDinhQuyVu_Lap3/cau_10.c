@@ -35,19 +35,9 @@ int reverseNumber(int m) // bai 5
     return m;
     
 }
-void checkPalindrome(int j, int m)
-{
-    if (j == m)
-    {
-        printf("Number is palindrome");
-    } else 
-        {
-            printf("Number is not palindrome");
-        }
-}
 int main()
 {   
-    int m, j;
+    int m;
     printf("Enter any number = ");
     scanf("%d", &m);
     while (m > 1000000)
@@ -58,5 +48,6 @@ int main()
     
 
     int result = reverseNumber(m);
-    checkPalindrome(m, result);
+    printf("After reverseNumber number = %d\n", result);
+
 }
