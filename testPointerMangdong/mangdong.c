@@ -18,7 +18,7 @@ int* nhap_mang(int* n)
     printf("nhap n: ");
     scanf("%d", n);
 
-    int* a = calloc(n, sizeof(int));
+    int* a = calloc(*n, sizeof(int));
 
     for (int i = 0; i < *n; i++)
     {
