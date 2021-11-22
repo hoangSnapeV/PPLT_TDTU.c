@@ -13,7 +13,6 @@ int count_duplNum(int a[], int* n)
                 break;
             }
         }
-        
     }
 
     return count;
@@ -22,7 +21,7 @@ int count_duplNum(int a[], int* n)
 
 int main()
 {   //22, 3, 4
-    int a[] = {22, 22, 16 , 3, 3, 22, 4, 4, 4, 2, 1, 4};
+    int a[] = {22, 16 , 4, 3, 22, 3, 4, 22};
     int n = sizeof(a) / sizeof(int);
 
     int result = count_duplNum(a, &n);

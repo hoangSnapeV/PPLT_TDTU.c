@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define max_el 50
 
 void print_array(int* a, int n)
 {
@@ -11,66 +12,43 @@ void print_array(int* a, int n)
     printf("\n");
 }
 
-int* dele_dulElment(int a[], int n, int* x)
-{
-    int count = 0;
-    int b[10];
-    int index = 0;
-
-    for (int  i = 0; i < n; i++)
-    {   
-        for (int j = i + 1; j < n; j++)
+void dele_allDulpi(int a[], int n)
+{   
+    int i = 0, j = 0, k = 0;
+    for ( i = 0; i < n; i++)
+    {
+        for (j = i + 1; j < n; j++)
         {
             if(a[i] == a[j])
             {
-                b[index] = a[j];
-                index++;
+                for(k = j; k < n - 1; k++)
+                {
+                    a[k] = a[k + 1];
+                }
+
+                n--;
                 
+                j--;
+                //printf("n = %d ,k = %d , j = %d, i = %d ,a[%d] = %d, a[%d] = %d\n", n, k, j, i, i, a[i], j, a[j]);
             }
         }
-    }
-
-    printf("index = %d\n", index);
-    print_array(b, index);
-    int t = n - index;
-
-    printf("\nx = %d", n);
-
-    printf("\nmang = %d", t);
-
-    int *c = calloc(t, 4);
-    int in = 0;
-
-    for (int i = 0; i < index; i++)
-    {
-        int y = b[i];
-        for (int j = 0; i < n; j++)
-        {
-            if(y != a[j]);
-            {
-                c[in] = a[j];
-                in++;
-            }
-        }   
+        
     }
     
-    return c;
+
+    print_array(a, n);
     
 }
-
 //in mang
 
 int main()
 {
-    int a[] = {22, 22, 16 , 3, 3, 22, 4, 4};
-    int n = sizeof(a) / sizeof(int);
+    int a[max_el] = {22, 16 , 4, 3, 22, 3, 4, 22};
+    int n = 8;
     print_array(a, n);
 
-    int x;
-    // int* arr = 
-    dele_dulElment(a, n, &x);
-
-    //print_array(arr, x);
-
+    dele_allDulpi(a, n); 
+    
+    
     return 0;
 }
