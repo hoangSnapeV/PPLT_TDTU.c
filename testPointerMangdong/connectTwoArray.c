@@ -44,6 +44,6 @@ int* connectTwoArray(int a[], int b[], int n, int m)
     {
         c[n + i] = b[i]; 
     }
-
+    
     return c;
 }

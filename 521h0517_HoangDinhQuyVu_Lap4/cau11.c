@@ -35,12 +35,32 @@ int* dele_allDulpi(int a[], int n, int* x)
         
     }
     *x = n;
+    
     int * c = a;
     return c;
     
 }
 //in mang
 
+void count_frequency(int a[], int c[], int n, int x)
+{
+    int count = 0;
+
+    for(int i = 0; i < x; i++)
+    {   
+        int c0 = c[i];
+        
+        for(int j = 0; j < n; j++)
+        {   
+            if(c0 == a[j])
+            {
+                count++;
+            }
+        }
+        printf("%d lap lai %d lan\n", c0, count);
+        count = 0;
+    }
+}
 int main()
 {
     int a[max_el] = {22, 16 , 4, 3, 22, 3, 4, 22};
@@ -49,8 +69,10 @@ int main()
     print_array(a, n);
 
     int* arr = dele_allDulpi(a, n, &x);
-    
     print_array(arr, x);
+    printf("\n");
+
+    count_frequency(a, arr, n, x);
     
     
     return 0;
