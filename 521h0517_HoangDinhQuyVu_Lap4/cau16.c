@@ -41,14 +41,17 @@ void matrix(int matrix_1[row][column], int matrix_2[row][column])
 }
 int main()
 {   
-    int matrix_1[row][column];
-    int matrix_2[row][column];
-    matrix(matrix_1, matrix_2);
+    // int matrix_1[row][column];
+    // int matrix_2[row][column];
+    // matrix(matrix_1, matrix_2);
 
 
-    print_matrix(matrix_1);
-    printf("\n");
-    print_matrix(matrix_2);
+    // print_matrix(matrix_1);
+    // printf("\n");
+    // print_matrix(matrix_2);
+
+    int x = 2 ** 2;
+    printf("%d", x);
     return 0;
 }
 
