@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <sys/wait.h>
+
 int check(char name[]) {
     int n = strlen(name);
     for (int i = 0; i < n; i++)
@@ -16,29 +17,31 @@ int check(char name[]) {
     } 
     return 1;
 }
-int sum(int n) {
-    int sum = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        sum += i;
+
+void guessCollatz(int n) {
+    //printf("%d, ", n);
+    while (n > 1)
+    {   
+        if (n % 2 == 0)
+        {
+            printf("%d, ", n);
+            n = n / 2;
+        } else {
+            printf("%d, ", n);
+            n = n * 3 + 1;
+        }
+
+        
     }
-    return sum;
+    if (n == 1)
+    {
+        printf("%d.\n", n);
+
+    }
+    
     
 }
 
-int sumUoc(int n) {
-    int sum = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        if (n % i == 0)
-        {
-            sum += i;
-        }
-        
-    }
-    return sum;
-    
-}
 int main(int argc, char ** argv) {
 
     if (argc > 2)
@@ -79,14 +82,16 @@ int main(int argc, char ** argv) {
             
             // vòng lặp tính tổng S
             // in ra S
-            int result1 = sum(n);
-            printf("S = %d\n", result1);
+            
+            guessCollatz(n);
+            printf("Ket thuc tien trinh con\n");
+
             
         } else {
             /* parent process */
             // tính ước số 
             // in ra
-            printf("Sum of Uoc = %d\n", sumUoc(n));
+            
             wait(NULL);
             
             
@@ -96,4 +101,3 @@ int main(int argc, char ** argv) {
     return 0;
   
 }
-
