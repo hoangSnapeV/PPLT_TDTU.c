@@ -1,1 +1,12 @@
 https://github.com/Trantin84/LAB_IntroOS
+
+#include <stdio.h>
+
+int main() {
+    int a[1000000];
+    for (int i = 0; i < 1000; i++)
+    {
+        a[i] = i;
+    }
+    
+}
