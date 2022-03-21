@@ -13,9 +13,10 @@
 
 int ave,min,max; /* this data is shared by the thread(s) */
 
-int a[100];
-int size;
-
+typedef struct  {
+  int a[100];
+  int size;
+}array;
 
 
 void * runner(void * param); /* threads call this function */
@@ -56,8 +57,8 @@ int main(int argc, char * argv[]) {
   //printf("sum = %d∖n", sum);
 }
 /* The thread will execute in this function */
-void * average((void *) param) {
-  int max = b.a[0];
+void * average(void * b) {
+  int max = ;
 
   for(int i = 1; i < b.size; i++){
 		if(b.a[i] > max){
