@@ -11,6 +11,7 @@
 #define MAX_INT 10000
 int a[M][N];
 void * writer(void * param);
+
 int main(int argc, char * argv[]) {
     pthread_t tid;
     pthread_attr_t attr; 

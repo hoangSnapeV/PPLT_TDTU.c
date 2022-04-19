@@ -44,17 +44,17 @@ int main(int argc, char * argv[]) {
   pthread_attr_init( & attr);
   /* create the thread */
   pthread_create( & tid[0], & attr, average, (void *) &b);
-  // pthread_create( & tid[1], & attr, lonnhat, argv[1]);
+  pthread_create( & tid[1], & attr, lonnhat, argv[1]);
 
-  // pthread_create( & tid[2], & attr, nhonhat, argv[1]);
+  pthread_create( & tid[2], & attr, nhonhat, argv[1]);
 
   /* wait for the thread to exit */
   pthread_join(tid[0], NULL);
 
 
-  // pthread_join(tid[1], NULL);
-  // pthread_join(tid[2], NULL);
-  //printf("sum = %d∖n", sum);
+  pthread_join(tid[1], NULL);
+  pthread_join(tid[2], NULL);
+  printf("sum = %d∖n", sum);
 }
 /* The thread will execute in this function */
 void * average(void * b) {
@@ -71,20 +71,20 @@ void * average(void * b) {
 }
 
 /* The thread will execute in this function */
-// void * lonnhat(void * param) {
-//   array *B = (struct array*) param;
-//     int i;
-//   for(i=0; i < B->size ; i++) //do something
-//     // tìm mã
-//   pthread_exit(0);
-// }
+void * lonnhat(void * param) {
+  array *B = (struct array*) param;
+    int i;
+  for(i=0; i < B->size ; i++) //do something
+    // tìm mã
+  pthread_exit(0);
+}
 
 /* The thread will execute in this function */
-// void * nhonhat(void * param) {
-//   int upper = atoi(param);
-//   // tìm min
-//   pthread_exit(0);
-// }
+void * nhonhat(void * param) {
+  int upper = atoi(param);
+  // tìm min
+  pthread_exit(0);
+}
 
 int check(char name[]) {
   int n = strlen(name);
